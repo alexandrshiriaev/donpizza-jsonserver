@@ -1,9 +1,676 @@
 {
-  "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" }
-  ],
-  "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
-  ],
-  "profile": { "name": "typicode" }
+    "categories": [
+        { "id": 1, "name": "Pizza" },
+        { "id": 2, "name": "Snacks" },
+        { "id": 3, "name": "Drinks" },
+        { "id": 4, "name": "Desserts" },
+        { "id": 5, "name": "Combos" }
+    ],
+    "products": [
+        {
+            "id": 1,
+            "categoryId": 2,
+            "imgPath": "1d0bf2b8dd2d472294538d1e80381f77_1875x1875.webp",
+            "name": "Spicy Dodster",
+            "lowestPrice": 4,
+            "description": "Hot appetizer with chicken, jalapeno peppers, pickled cucumbers, tomatoes, mozzarella and BBQ sauce in a thin wheat tortilla",
+            "additionalDescription": "190 g",
+            "tag": {
+                "value": "New",
+                "bgColor": "#E31836",
+                "textColor": "#FFFFFF"
+            }
+        },
+        {
+            "id": 2,
+            "categoryId": 3,
+            "imgPath": "apple-rich.webp",
+            "name": "Apple Juice Rich",
+            "lowestPrice": 2,
+            "description": "",
+            "additionalDescription": "1 L"
+        },
+        {
+            "id": 3,
+            "categoryId": 4,
+            "imgPath": "banana-cheesecake.webp",
+            "name": "Banana cheesecake with chocolate chip cookies",
+            "lowestPrice": 1.5,
+            "description": "Sunny outside and bright inside. Summer novelty - delicate cheesecake with banana and chocolate chip cookies",
+            "additionalDescription": "100 g"
+        },
+        {
+            "id": 4,
+            "categoryId": 3,
+            "imgPath": "bona-aqua.webp",
+            "name": "Bona Aqua still water",
+            "lowestPrice": 0.75,
+            "description": "",
+            "additionalDescription": "0.5 L"
+        },
+        {
+            "id": 5,
+            "categoryId": 1,
+            "imgPath": "burger-pizza.webp",
+            "name": "Burger Pizza",
+            "lowestPrice": 4.4,
+            "description": "",
+            "additionalDescription": "",
+            "initialIngredients": [
+                { "id": 1, "name": "ham", "canBeRemoved": true },
+                { "id": 2, "name": "pickled cucumbers", "canBeRemoved": true },
+                { "id": 3, "name": "tomatoes", "canBeRemoved": true },
+                { "id": 4, "name": "red onion", "canBeRemoved": true },
+                { "id": 5, "name": "garlic", "canBeRemoved": true },
+                { "id": 6, "name": "burger sauce", "canBeRemoved": false },
+                { "id": 7, "name": "mozzarella", "canBeRemoved": false },
+                {
+                    "id": 8,
+                    "name": "signature tomato sauce",
+                    "canBeRemoved": false
+                }
+            ],
+            "optionalIngredients": [
+                { "id": 1, "name": "ham", "price": 0.8 },
+                { "id": 2, "name": "pickled cucumbers", "price": 0.6 },
+                { "id": 3, "name": "fresh tomatoes", "price": 0.6 },
+                { "id": 4, "name": "red onion", "price": 0.6 },
+                { "id": 5, "name": "creamy mozzarella", "price": 0.8 },
+                { "id": 6, "name": "cheese side", "price": 1.8 },
+                { "id": 7, "name": "cheddar and parmesan", "price": 0.8 },
+                { "id": 8, "name": "spicy jalapeno", "price": 0.6 },
+                { "id": 9, "name": "tender chick", "price": 0.8 },
+                { "id": 10, "name": "champignon", "price": 0.6 },
+                { "id": 11, "name": "crispy bacon", "price": 0.8 },
+                { "id": 12, "name": "spicy pepperoni", "price": 0.8 },
+                { "id": 13, "name": "spicy chorizo", "price": 0.8 },
+                { "id": 14, "name": "juicy pineapples", "price": 0.8 },
+                { "id": 15, "name": "italian herbs", "price": 0.8 },
+                { "id": 16, "name": "bell pepper", "price": 0.8 },
+                { "id": 17, "name": "cheese cubes", "price": 0.8 },
+                { "id": 18, "name": "blue cheese", "price": 0.8 }
+            ],
+            "variants": {
+                "small": {
+                    "traditional": {
+                        "isAvailable": true,
+                        "weight": 420,
+                        "default": false,
+                        "priceDifference": 0
+                    },
+                    "thin": {
+                        "isAvailable": false
+                    }
+                },
+                "medium": {
+                    "traditional": {
+                        "isAvailable": true,
+                        "weight": 630,
+                        "default": true,
+                        "priceDifference": 2.3
+                    },
+                    "thin": {
+                        "isAvailable": true,
+                        "weight": 540,
+                        "default": false,
+                        "priceDifference": 2.3
+                    }
+                },
+                "large": {
+                    "traditional": {
+                        "isAvailable": true,
+                        "weight": 890,
+                        "default": false,
+                        "priceDifference": 3.9
+                    },
+                    "thin": {
+                        "isAvailable": true,
+                        "weight": 780,
+                        "default": false,
+                        "priceDifference": 3.9
+                    }
+                }
+            }
+        },
+        {
+            "id": 6,
+            "categoryId": 1,
+            "imgPath": "pepperoni-fresh.webp",
+            "name": "Pepperoni fresh",
+            "lowestPrice": 3.0,
+            "description": "",
+            "additionalDescription": "",
+            "initialIngredients": [
+                { "id": 1, "name": "spicy pepperoni", "canBeRemoved": true },
+                { "id": 2, "name": "an increased portion of mozzarella", "canBeRemoved": false },
+                { "id": 3, "name": "tomatoes", "canBeRemoved": true },
+                { "id": 4, "name": "the signature tomato sauce", "canBeRemoved": false }
+            ],
+            "optionalIngredients": [
+                { "id": 1, "name": "creamy mozzarella", "price": 0.6 },
+                { "id": 2, "name": "fresh tomatoes", "price": 0.6 },
+                { "id": 3, "name": "cheese rim", "price": 1.8 },
+                { "id": 4, "name": "cheddar and parmesan", "price": 0.6 },
+                { "id": 5, "name": "spicy jalapenos", "price": 0.6 },
+                { "id": 6, "name": "tender chicken", "price": 0.6 },
+                { "id": 7, "name": "mushrooms", "price": 0.6 },
+                { "id": 8, "name": "crunchy bacon", "price": 0.6 },
+                { "id": 9, "name": "ham", "price": 0.6 },
+                { "id": 10, "name": "spicy chorizo", "price": 0.6 },
+                { "id": 11, "name": "pickled cucumbers", "price": 0.6 },
+                { "id": 12, "name": "red onion", "price": 0.6 },
+                { "id": 13, "name": "juicy pineapples", "price": 0.6 },
+                { "id": 14, "name": "italian herbs", "price": 0.6 },
+                { "id": 15, "name": "pepper", "price": 0.6 },
+                { "id": 16, "name": "cheese cubes", "price": 0.6 },
+                { "id": 17, "name": "blue cheese", "price": 0.6 }
+            ],
+            "variants": {
+                "small": {
+                    "traditional": {
+                        "isAvailable": true,
+                        "weight": 380,
+                        "default": false,
+                        "priceDifference": 0
+                    },
+                    "thin": {
+                        "isAvailable": false
+                    }
+                },
+                "medium": {
+                    "traditional": {
+                        "isAvailable": true,
+                        "weight": 590,
+                        "default": true,
+                        "priceDifference": 2.2
+                    },
+                    "thin": {
+                        "isAvailable": true,
+                        "weight": 490,
+                        "default": false,
+                        "priceDifference": 2.2
+                    }
+                },
+                "large": {
+                    "traditional": {
+                        "isAvailable": true,
+                        "weight": 790,
+                        "default": false,
+                        "priceDifference": 3.4
+                    },
+                    "thin": {
+                        "isAvailable": true,
+                        "weight": 670,
+                        "default": false,
+                        "priceDifference": 3.4
+                    }
+                }
+            }
+        },
+        {
+            "id": 7,
+            "categoryId": 2,
+            "imgPath": "supermeat-dodster.webp",
+            "name": "Super Meat Dodster",
+            "lowestPrice": 2.1,
+            "description": "Hot appetizer with chicken, mozzarella, meatballs, spicy chorizo sausages and burger sauce in a thin wheat tortilla",
+            "additionalDescription": "160 g"
+        },
+        {
+            "id": 8,
+            "categoryId": 2,
+            "imgPath": "pasta-carbonara.webp",
+            "name": "Pasta Carbonara",
+            "lowestPrice": 3.3,
+            "description": "Pasta with bacon, cheddar and parmesan cheeses, tomatoes, mozzarella, signature alfredo sauce and garlic",
+            "additionalDescription": "350 g"
+        },
+        {
+            "id": 9,
+            "categoryId": 2,
+            "imgPath": "meat-pasta.webp",
+            "name": "Meat pasta",
+            "lowestPrice": 3.3,
+            "description": "Pasta with meatballs, burger sauce, mozzarella, signature tomato sauce and garlic",
+            "additionalDescription": "330 g"
+        },
+        {
+            "id": 10,
+            "categoryId": 4,
+            "imgPath": "puff-sticks.webp",
+            "name": "Puff sticks with pineapples and lingonberries",
+            "lowestPrice": 2.3,
+            "description": "Here everything is at once - lingonberries and pineapple with condensed milk on puff pastry",
+            "additionalDescription": "8 pcs"
+        },
+        {
+            "id": 11,
+            "categoryId": 4,
+            "imgPath": "muffin-three-chocolates.webp",
+            "name": "Muffin Three Chocolates",
+            "lowestPrice": 1,
+            "description": "Well, this muffin cupcake! It is made of natural cocoa, and inside there is a delicate filling of cubes of white and milk chocolate",
+            "additionalDescription": "120 g"
+        },
+        {
+            "id": 12,
+            "categoryId": 4,
+            "imgPath": "cheesecake-new-york.webp",
+            "name": "Cheesecake New York",
+            "lowestPrice": 1.5,
+            "description": "We tried a thousand desserts and finally found the favorite of the guests - the most delicate cottage cheesecake",
+            "additionalDescription": "100 g"},
+        {
+            "id": 13,
+            "categoryId": 4,
+            "imgPath": "fondant.webp",
+            "name": "Fondant",
+            "lowestPrice": 2.9,
+            "description": "Four out of five guests say \"Oh la la!\" when they eat this crispy French dessert with a melted chocolate filling",
+            "additionalDescription": "2 pcs"
+        },
+        {
+            "id": 14,
+            "categoryId": 5,
+            "imgPath": "two-sauces.webp",
+            "name": "2 sauces",
+            "lowestPrice": 0.75,
+            "description": "Cheese and BBQ sauces for bright snacks",
+            "tag": {
+                "value": "Profit",
+                "bgColor": "#9333EA",
+                "textColor": "#FFFFFF"
+            }
+        },
+        {
+            "id": 15,
+            "categoryId": 5,
+            "imgPath": "two-starters.webp",
+            "name": "2 starters",
+            "lowestPrice": 3.3,
+            "description": "A hot appetizer with mozzarella in a wheat tortilla is good. And two with different flavors are even better",
+            "tag": {
+                "value": "Profit",
+                "bgColor": "#9333EA",
+                "textColor": "#FFFFFF"
+            }
+        },
+        {
+            "id": 16,
+            "categoryId": 5,
+            "imgPath": "two-dodsters.webp",
+            "name": "2 Dodsters",
+            "lowestPrice": 3.2,
+            "description": "I'm twisting, I'm spinning, I want two hot Dodsters! Especially if one is Classic and the other is Spicy with jalapenos, pickles and barbecue sauce in a thin wheat tortilla",
+            "tag": {
+                "value": "Profit",
+                "bgColor": "#9333EA",
+                "textColor": "#FFFFFF"
+            }
+        },
+        {
+            "id": 17,
+            "categoryId": 5,
+            "imgPath": "big-combo.webp",
+            "name": "Big Combo",
+            "lowestPrice": 6.0,
+            "description": "If you want a little bit of everything. A small pizza with ham and mushrooms, appetizer, drink and sauce",
+            "tag": {
+                "value": "Profit",
+                "bgColor": "#9333EA",
+                "textColor": "#FFFFFF"
+            }
+        },
+        {
+            "id": 18,
+            "categoryId": 1,
+            "imgPath": "cheese.webp",
+            "name": "Cheese",
+            "lowestPrice": 3.0,
+            "description": "",
+            "additionalDescription": "",
+            "initialIngredients": [
+                { "id": 1, "name": "mozzarella", "canBeRemoved": false },
+                { "id": 2, "name": "cheddar and parmesan cheeses", "canBeRemoved": false },
+                { "id": 3, "name": "signature alfredo sauce", "canBeRemoved": false }
+            ],
+            "optionalIngredients": [
+                { "id": 1, "name": "creamy mozzarella", "price": 0.6 },
+                { "id": 3, "name": "cheese rim", "price": 1.8 },
+                { "id": 4, "name": "cheddar and parmesan", "price": 0.6 },
+                { "id": 5, "name": "spicy jalapenos", "price": 0.6 },
+                { "id": 6, "name": "tender chicken", "price": 0.6 },
+                { "id": 7, "name": "mushrooms", "price": 0.6 },
+                { "id": 8, "name": "crunchy bacon", "price": 0.6 },
+                { "id": 9, "name": "spicy pepperoni", "price": 0.6 },
+                { "id": 10, "name": "spicy chorizo", "price": 0.6 },
+                { "id": 11, "name": "pickled cucumbers", "price": 0.6 },
+                { "id": 12, "name": "fresh tomatoes", "price": 0.6 },
+                { "id": 13, "name": "red onion", "price": 0.6 },
+                { "id": 14, "name": "juicy pineapples", "price": 0.6 },
+                { "id": 15, "name": "italian herbs", "price": 0.6 },
+                { "id": 16, "name": "pepper", "price": 0.6 },
+                { "id": 17, "name": "cheese cubes", "price": 0.6 },
+                { "id": 18, "name": "ham", "price": 0.6 }
+            ],
+            "variants": {
+                "small": {
+                    "traditional": {
+                        "isAvailable": true,
+                        "weight": 310,
+                        "default": false,
+                        "priceDifference": 0
+                    },
+                    "thin": {
+                        "isAvailable": false
+                    }
+                },
+                "medium": {
+                    "traditional": {
+                        "isAvailable": true,
+                        "weight": 470,
+                        "default": true,
+                        "priceDifference": 3.3
+                    },
+                    "thin": {
+                        "isAvailable": true,
+                        "weight": 360,
+                        "default": false,
+                        "priceDifference": 3.3
+                    }
+                },
+                "large": {
+                    "traditional": {
+                        "isAvailable": true,
+                        "weight": 640,
+                        "default": false,
+                        "priceDifference": 4.2
+                    },
+                    "thin": {
+                        "isAvailable": true,
+                        "weight": 530,
+                        "default": false,
+                        "priceDifference": 4.2
+                    }
+                }
+            }
+        },
+        {
+            "id": 19,
+            "categoryId": 1,
+            "imgPath": "ham-and-cheese.webp",
+            "name": "Ham and cheese",
+            "lowestPrice": 3.9,
+            "description": "",
+            "additionalDescription": "",
+            "initialIngredients": [
+                { "id": 1, "name": "ham", "canBeRemoved": true },
+                { "id": 2, "name": "mozzarella", "canBeRemoved": false },
+                { "id": 3, "name": "alfredo's signature sauce", "canBeRemoved": false}
+            ],
+            "optionalIngredients": [
+                { "id": 1, "name": "ham", "price": 0.6 },
+                { "id": 2, "name": "creamy mozzarella", "price": 0.6 },
+                { "id": 3, "name": "cheese rim", "price": 1.8 },
+                { "id": 4, "name": "cheddar and parmesan", "price": 0.6 },
+                { "id": 5, "name": "spicy jalapenos", "price": 0.6 },
+                { "id": 6, "name": "tender chicken", "price": 0.6 },
+                { "id": 7, "name": "mushrooms", "price": 0.6 },
+                { "id": 8, "name": "crunchy bacon", "price": 0.6 },
+                { "id": 9, "name": "spicy pepperoni", "price": 0.6 },
+                { "id": 10, "name": "spicy chorizo", "price": 0.6 },
+                { "id": 11, "name": "pickled cucumbers", "price": 0.6 },
+                { "id": 12, "name": "fresh tomatoes", "price": 0.6 },
+                { "id": 13, "name": "red onion", "price": 0.6 },
+                { "id": 14, "name": "juicy pineapples", "price": 0.6 },
+                { "id": 15, "name": "italian herbs", "price": 0.6 },
+                { "id": 16, "name": "pepper", "price": 0.6 },
+                { "id": 17, "name": "cheese cubes", "price": 0.6 },
+                { "id": 18, "name": "blue cheese", "price": 0.6 }
+            ],
+            "variants": {
+                "small": {
+                    "traditional": {
+                        "isAvailable": true,
+                        "weight": 320,
+                        "default": false,
+                        "priceDifference": 0
+                    },
+                    "thin": {
+                        "isAvailable": false
+                    }
+                },
+                "medium": {
+                    "traditional": {
+                        "isAvailable": true,
+                        "weight": 480,
+                        "default": true,
+                        "priceDifference": 2.1
+                    },
+                    "thin": {
+                        "isAvailable": true,
+                        "weight": 370,
+                        "default": false,
+                        "priceDifference": 2.1
+                    }
+                },
+                "large": {
+                    "traditional": {
+                        "isAvailable": true,
+                        "weight": 630,
+                        "default": false,
+                        "priceDifference": 3.3
+                    },
+                    "thin": {
+                        "isAvailable": true,
+                        "weight": 550,
+                        "default": false,
+                        "priceDifference": 3.3
+                    }
+                }
+            }
+        },
+        {
+            "id": 20,
+            "categoryId": 1,
+            "imgPath": "hawaiian.webp",
+            "name": "Hawaiian",
+            "lowestPrice": 4.4,
+            "description": "",
+            "additionalDescription": "",
+            "initialIngredients": [
+                { "id": 1, "name": "alfredo's signature sauce", "canBeRemoved": false },
+                { "id": 2, "name": "chicken", "canBeRemoved": true},
+                { "id": 3, "name": "mozzarella", "canBeRemoved": false},
+                { "id": 4, "name": "pineapples", "canBeRemoved": true}
+            ],
+            "optionalIngredients": [
+                { "id": 1, "name": "tender chicken", "price": 0.6 },
+                { "id": 2, "name": "creamy mozzarella", "price": 0.6 },
+                { "id": 3, "name": "juicy pineapples", "price": 0.6 },
+                { "id": 4, "name": "cheese rim", "price": 1.8 },
+                { "id": 5, "name": "cheddar and parmesan", "price": 0.6 },
+                { "id": 6, "name": "spicy jalapeno", "price": 0.6 },
+                { "id": 7, "name": "mushrooms", "price": 0.6 },
+                { "id": 8, "name": "crunchy bacon", "price": 0.6 },
+                { "id": 9, "name": "ham", "price": 0.6 },
+                { "id": 10, "name": "spicy pepperoni", "price": 0.6 },
+                { "id": 11, "name": "spicy chorizo", "price": 0.6 },
+                { "id": 12, "name": "pickled cucumbers", "price": 0.6 },
+                { "id": 13, "name": "fresh tomatoes", "price": 0.6 },
+                { "id": 14, "name": "red onion", "price": 0.6 },
+                { "id": 15, "name": "italian herbs", "price": 0.6 },
+                { "id": 16, "name": "pepper", "price": 0.6 },
+                { "id": 17, "name": "meatballs", "price": 0.6 },
+                { "id": 18, "name": "cheese cubes", "price": 0.6 },
+                { "id": 19, "name": "blue cheese", "price": 0.6 }
+            ],
+            "variants": {
+                "small": {
+                    "traditional": {
+                        "isAvailable": true,
+                        "weight": 390,
+                        "default": false,
+                        "priceDifference": 0
+                    },
+                    "thin": {
+                        "isAvailable": false
+                    }
+                },
+                "medium": {
+                    "traditional": {
+                        "isAvailable": true,
+                        "weight": 590,
+                        "default": true,
+                        "priceDifference": 2.3
+                    },
+                    "thin": {
+                        "isAvailable": true,
+                        "weight": 490,
+                        "default": false,
+                        "priceDifference": 2.3
+                    }
+                },
+                "large": {
+                    "traditional": {
+                        "isAvailable": true,
+                        "weight": 810,
+                        "default": false,
+                        "priceDifference": 3.9
+                    },
+                    "thin": {
+                        "isAvailable": true,
+                        "weight": 680,
+                        "default": false,
+                        "priceDifference": 3.9
+                    }
+                }
+            }
+        },
+        {
+            "id": 21,
+            "categoryId": 1,
+            "imgPath": "four-seasons.webp",
+            "name": "Four Seasons",
+            "lowestPrice": 4.4,
+            "description": "",
+            "additionalDescription": "",
+            "initialIngredients": [
+                { "id": 1, "name": "an increased portion of mozzarella", "canBeRemoved": false },
+                { "id": 2, "name": "ham", "canBeRemoved": true},
+                { "id": 3, "name": "spicy pepperoni", "canBeRemoved": true},
+                { "id": 4, "name": "cheese cubes", "canBeRemoved": true},
+                { "id": 5, "name": "tomatoes", "canBeRemoved": true},
+                { "id": 6, "name": "mushrooms", "canBeRemoved": true},
+                { "id": 7, "name": "italian herbs", "canBeRemoved": true},
+                { "id": 8, "name": "the signature tomato sauce", "canBeRemoved": false}
+            ],
+            "optionalIngredients": [
+                { "id": 1, "name": "creamy mozzarella", "price": 0.6 },
+                { "id": 2, "name": "cheddar and parmesan", "price": 0.6 },
+                { "id": 3, "name": "spicy jalapenos", "price": 0.6 }
+            ],
+            "variants": {
+                "small": {
+                    "traditional": {
+                        "isAvailable": true,
+                        "weight": 380,
+                        "default": false,
+                        "priceDifference": 0
+                    },
+                    "thin": {
+                        "isAvailable": false
+                    }
+                },
+                "medium": {
+                    "traditional": {
+                        "isAvailable": true,
+                        "weight": 610,
+                        "default": true,
+                        "priceDifference": 2.2
+                    },
+                    "thin": {
+                        "isAvailable": true,
+                        "weight": 510,
+                        "default": false,
+                        "priceDifference": 2.2
+                    }
+                },
+                "large": {
+                    "traditional": {
+                        "isAvailable": true,
+                        "weight": 840,
+                        "default": false,
+                        "priceDifference": 3.9
+                    },
+                    "thin": {
+                        "isAvailable": true,
+                        "weight": 730,
+                        "default": false,
+                        "priceDifference": 3.9
+                    }
+                }
+            }
+        },
+        {
+            "id": 22,
+            "categoryId": 2,
+            "imgPath": "lunchbox-chickenwings.webp",
+            "name": "Lunchbox with chicken wings",
+            "lowestPrice": 3.2,
+            "description": "A hot, hearty lunch of chicken wings with spices and the aroma of smoking, spicy potatoes from the oven and barbecue sauce",
+            "additionalDescription": "220 g"
+        },
+        {
+            "id": 23,
+            "categoryId": 2,
+            "imgPath": "chicken-pieces.webp",
+            "name": "Chicken pieces",
+            "lowestPrice": 3.9,
+            "description": "Juicy pieces of whole chicken fillet with a golden crust",
+            "additionalDescription": "490 g"
+        },
+        {
+            "id": 23,
+            "categoryId": 4,
+            "imgPath": "cheesecake-raspberry.webp",
+            "name": "Cheesecakes with raspberry jam",
+            "lowestPrice": 2.9,
+            "description": "The favorite dessert of many of our guests is ruddy cheesecakes from the oven. So delicate, moderately sweet and reminiscent of childhood",
+            "additionalDescription": "4 pcs"
+        },
+        {
+            "id": 24,
+            "categoryId": 3,
+            "imgPath": "orange-rich.webp",
+            "name": "Orange Juice Rich",
+            "lowestPrice": 2.0,
+            "additionalDescription": "1 L"
+        },
+        {
+            "id": 25,
+            "categoryId": 3,
+            "imgPath": "cherry-nectar-rich.webp",
+            "name": "Cherry Nectar Rich",
+            "lowestPrice": 2.0,
+            "additionalDescription": "1 L"
+        },
+        {
+            "id": 26,
+            "categoryId": 3,
+            "imgPath": "rich-tea-lemon.webp",
+            "name": "Rich Tea Black with lemon",
+            "lowestPrice": 1.2,
+            "additionalDescription": "0.5 L"
+        },
+        {
+            "id": 27,
+            "categoryId": 3,
+            "imgPath": "rich-tea-green.webp",
+            "name": "Rich Tea Green",
+            "lowestPrice": 1.2,
+            "additionalDescription": "0.5 L"
+        }
+
+    ]
 }
